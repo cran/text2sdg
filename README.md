@@ -6,7 +6,7 @@
 
 The United Nations’ Sustainable Development Goals (SDGs) have become an important guideline for higher-education and research institutions to monitor and plan their contributions to social, economic, and environmental transformations.
 
-The `text2sdg` package is the first open-source, multi-system analysis package that identifies SDGs in text, opening up the opportunity to monitor any type of text-based data, including scientific output and corporate publications
+The `text2sdg` package is the first open-source, multi-system analysis package that identifies SDGs in text, opening up the opportunity to monitor any type of text-based data, including scientific output and corporate publications.
 
 
 ## General Information
@@ -28,7 +28,3 @@ The latest development version on GitHub can be installed via `devtools::install
 If you publish analyzes carried out using the `text2sdg` package, we kindly ask that you cite the package as follows:
 
 Wulff, Dirk U. & Meier, Dominik S. (2021). text2sdg: Detecting UN Sustainable Development Goals in Text (0.1.0). Zenodo. https://doi.org/10.5281/zenodo.5553980
-
-## Acknowledgments
-
-We thank Laura Wiles for editing the tutorial.

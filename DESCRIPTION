@@ -1,7 +1,7 @@
 Package: text2sdg
 Type: Package
-Version: 0.1.0
-Date: 2021-10-08
+Version: 0.1.1
+Date: 2021-11-05
 Title: Detecting UN Sustainable Development Goals in Text
 Description: The United Nations’ Sustainable Development Goals (SDGs) have become an important guideline for organisations to monitor and plan their contributions to social, economic, and environmental transformations. The 'text2sdg' package is an open-source analysis package that identifies SDGs in text using scientifically developed query systems, opening up the opportunity to monitor any type of text-based data, such as scientific output or corporate publications.
 Maintainer: Dominik S. Meier <dominikmeier@outlook.com>
@@ -28,9 +28,9 @@ LazyData: TRUE
 RoxygenNote: 7.1.1
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2021-10-11 11:58:10 UTC; meidom02
+Packaged: 2021-11-05 20:08:38 UTC; meidom02
 Author: Dirk U. Wulff [aut] (<https://orcid.org/0000-0002-4008-8022>),
   Dominik S. Meier [aut, cre] (<https://orcid.org/0000-0002-3999-1388>),
   Rui Mata [ctb] (<https://orcid.org/0000-0002-1679-906X>)
 Repository: CRAN
-Date/Publication: 2021-10-12 08:20:02 UTC
+Date/Publication: 2021-11-07 17:10:02 UTC

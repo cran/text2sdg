@@ -69,4 +69,3 @@ crosstab_sdg(hits_all) %>% round(2)
 # evaluate correspondence between systems 
 crosstab_sdg(hits_all, compare = "sdgs") %>% round(2)
 
-
