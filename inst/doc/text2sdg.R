@@ -7,10 +7,10 @@ knitr::opts_chunk$set(
 library(text2sdg)
 
 
-## -----------------------------------------------------------------------------
-# detecting SDGs in projects
-hits_default <- detect_sdg(projects)
-hits_default
+## ---- eval=FALSE--------------------------------------------------------------
+#  # detecting SDGs in projects
+#  hits_default <- detect_sdg(projects)
+#  hits_default
 
 ## ---- echo = F----------------------------------------------------------------
 options(tibble.print_min = 5)
