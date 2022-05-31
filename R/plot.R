@@ -45,7 +45,7 @@ plot_sdg = function(hits,
   }
 
   # replace NULLs
-  if(is.null(systems)) systems = unique(hits$system)
+  if(is.null(systems)) systems = hits %>% dplyr::arrange(system) %>% dplyr::pull(system) %>% as.character() %>% unique()
   if(is.null(sdgs)) sdgs = unique(stringr::str_extract(hits$sdg,"[:digit:]{2}") %>% as.numeric())
 
   # check sdg and system
@@ -75,20 +75,12 @@ plot_sdg = function(hits,
   # handle sdgs
   sdgs = paste0("SDG-", ifelse(sdgs < 10, "0", ""),sdgs) %>% sort()
 
-  # prepare system labels
-  labels = c("aurora" = "Aurora",
-             "elsevier" = "Elsevier",
-             "siris" = "SIRIS",
-             "sdsn" = "SDSN",
-             "ontology" = "Ontology")
-
   # prepare data
   hits = hits %>%
     dplyr::filter(sdg %in% sdgs,
                   system %in% systems) %>%
     dplyr::mutate(sdg = factor(sdg, levels = sdgs),
-                  system = labels[system],
-                  system = factor(system, levels = labels[labels %in% system]))
+                  system = factor(system))
 
   # change to titles
   if(sdg_titles == TRUE){

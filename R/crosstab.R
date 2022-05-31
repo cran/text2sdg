@@ -38,7 +38,7 @@ crosstab_sdg <- function(hits,
   }
 
   # replace NULLs
-  if(is.null(systems)) systems = unique(hits$system)
+  if(is.null(systems)) systems = hits %>% dplyr::arrange(system) %>% dplyr::pull(system) %>% as.character() %>% unique()
   if(is.null(sdgs)) sdgs = unique(stringr::str_extract(hits$sdg,"[:digit:]{2}") %>% as.numeric())
 
   # check compare
@@ -64,25 +64,16 @@ crosstab_sdg <- function(hits,
     }
   }
 
-
   # handle duplicates
   hits <- hits %>% dplyr::distinct(document, sdg, system)
 
   # handle selected sdgs
   sdgs = paste0("SDG-", ifelse(sdgs < 10, "0", ""),sdgs) %>% sort()
 
-  # prepare system labels
-  labels = c("aurora" = "Aurora",
-             "elsevier" = "Elsevier",
-             "siris" = "SIRIS",
-             "sdsn" = "SDSN",
-             "ontology" = "Ontology")
-
   # filter and process systems
   hits = hits %>%
     dplyr::filter(sdg %in% sdgs,
-                  system %in% systems) %>%
-    dplyr::mutate(system = labels[system])
+                  system %in% systems)
 
   # abort if no hits left
   if(nrow(hits) == 0) {
@@ -93,7 +84,7 @@ crosstab_sdg <- function(hits,
   if(compare[[1]] == "systems") {
 
       # do something
-      phi_dat <- tidyr::expand_grid(document = 1:length(levels(hits$document)), system = labels[systems], sdg = sdgs) %>%
+      phi_dat <- tidyr::expand_grid(document = 1:length(levels(hits$document)), system = systems, sdg = sdgs) %>%
         dplyr::mutate(document = as.factor(document)) %>%
         dplyr::left_join(hits %>%
                            dplyr::mutate(hit = 1) %>%
@@ -111,14 +102,12 @@ crosstab_sdg <- function(hits,
         cor(.) %>% suppressWarnings()
 
       # reorder
-      correlations <-
-        correlations[labels[labels %in% rownames(correlations)],
-                     labels[labels %in% colnames(correlations)]]
+      correlations <- correlations[systems, systems]
 
   } else {
 
     # do something
-    phi_dat <- tidyr::expand_grid(document = 1:length(levels(hits$document)), system = labels[systems], sdg = sdgs) %>%
+    phi_dat <- tidyr::expand_grid(document = 1:length(levels(hits$document)), system = systems, sdg = sdgs) %>%
       dplyr::mutate(document = as.factor(document)) %>%
       dplyr::left_join(hits %>%
                          dplyr::mutate(hit = 1),

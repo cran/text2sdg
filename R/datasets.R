@@ -8,7 +8,7 @@
 
 #' SDG queries of the Aurora Universities Network
 #'
-#' A dataset containing the SDG queries version 5.0 of the \href{https://aurora-network.global/activity/sustainability/}{Aurora Universities Network}. See the corresponding \href{https://github.com/Aurora-Network-Global/sdg-queries}{GitHub repository}. For the actual implementation of the queries see \code{aurora_simple}, \code{aurora_and}, \code{aurora_w}, and the queries hard-coded in \code{detect_aurora}. There are multiple queries per SDG (one per row). In comparison to previous versions, this version of the queries Aurora added more keywords related to academic terminology to be able to detect more research papers related to the SDGs. The current version also drew inspiration from the SIRIS query system (\code{siris_queries}). The Aurora queries were designed to be precise rather than sensitive. To achieve this the queries make use complex keyword-combinations using several different logical search operators. All SDGs (1-17) are covered.
+#' A dataset containing the SDG queries version 5.0 of the \href{https://aurora-universities.eu/}{Aurora Universities Network}. See the corresponding \href{https://github.com/Aurora-Network-Global/sdg-queries}{GitHub repository}. For the actual implementation of the queries see \code{aurora_simple}, \code{aurora_and}, \code{aurora_w}, and the queries hard-coded in \code{detect_aurora}. There are multiple queries per SDG (one per row). In comparison to previous versions, this version of the queries Aurora added more keywords related to academic terminology to be able to detect more research papers related to the SDGs. The current version also drew inspiration from the SIRIS query system (\code{siris_queries}). The Aurora queries were designed to be precise rather than sensitive. To achieve this the queries make use complex keyword-combinations using several different logical search operators. All SDGs (1-17) are covered.
 #'
 #' @format A data frame with 378 rows and 5 columns
 #' \describe{
@@ -52,9 +52,9 @@
 #' @source \url{https://data.mendeley.com/datasets/87txkw7khs/1}
 "elsevier_queries"
 
-#' SDG keyword ontology of Bautista-Puig and Mauleón
+#' SDG keyword ontology by OSDG
 #'
-#' A dataset containing the SDG queries based on the keyword ontology of Bautista-Puig and Mauleón. The queries are available from \href{https://figshare.com/articles/dataset/SDG_ontology/11106113/1}{figshare.com}.
+#' A dataset containing the SDG queries based on the keyword ontology by OSDG. The queries are available from \href{https://figshare.com/articles/dataset/SDG_ontology/11106113/1}{figshare.com}.
 #'
 #' Bautista-Puig, N.; Mauleón E. (2019). Unveiling the path towards sustainability: is there a research interest on sustainable goals? In the 17th International Conference on Scientometrics & Informetrics (ISSI 2019), Rome (Italy), Volume II, ISBN 978-88-3381-118-5, p.2770-2771. The authors of these queries first created an ontology from central keywords in the SDG UN description and expanded these keywords with keywords they identified in SDG related research output. There are multiple queries per SDG. All SDGs (1-17) are covered.
 #'
@@ -68,7 +68,7 @@
 #'   \item{query}{SDG query}
 #' }
 #' @source \url{https://figshare.com/articles/dataset/SDG_ontology/11106113/1}
-"ontology_queries"
+"osdg_queries"
 
 #' SDG keywords by SDSN
 #'
