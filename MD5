@@ -1,6 +1,6 @@
-34a1abd8513b54a4471b78bdc1c31a5e *DESCRIPTION
+14fda0a1db8d0ff3eca8ef2a6032c02e *DESCRIPTION
 c69ba943a3d85672c54d4f385b852184 *NAMESPACE
-63a81bc23e937dca3419f8518374dfd5 *NEWS.md
+9853f87b2ef9742e7e0ab568e66640bc *NEWS.md
 99c23980588de37e8e8edbc0fe163da9 *R/aurora.R
 cbcce089a73a09b4ea3addc6a878373d *R/crosstab.R
 af523ae782fbf65a59d840b967d55829 *R/datasets.R
@@ -11,7 +11,7 @@ da0424e72fbaf9301661c028a2e9a0f2 *R/globals.R
 6aac2e2f7847f9371cb378a88f8e77c9 *R/helper.R
 1fee29b8a11e029d94ad110f87c8c2b5 *R/osdg.R
 0143aafb850cff19cb04d9ca82c480cd *R/plot.R
-cab971a9b31cb18da432154629417c2d *R/sdsn.R
+f63950553d7fd0fd682c95d5c74c49fa *R/sdsn.R
 9c31cdb6c4e3bc7ee6b8a554372dabea *R/siris.R
 188fd1623ff663ef4757f8a543935743 *R/sysdata.rda
 fafe39ec9cd553b53bee421c7104c860 *R/test.R
@@ -24,7 +24,7 @@ a791a71459bfada608d32a81a0019f62 *README.md
 62ada159c4750edbd9022c0c51d64055 *data/elsevier_queries.RData
 da9d7ab60db3df8c5c488874deefb885 *data/osdg_queries.RData
 c5a460f20b17d8cd9a81858bffb1f50c *data/projects.RData
-0ec36850e6d35d8ca007c5218fe9b2af *data/sdsn_queries.RData
+f42acce213706938efa26ac75ccb93b1 *data/sdsn_queries.RData
 1a2f73714b988acd688a3893ffb7da69 *data/siris_queries.RData
 f6e9d6116e9b0d488b99d32af692cccb *inst/doc/text2sdg.R
 532a99ad330a9fb9381c657940c8ef7a *inst/doc/text2sdg.Rmd
