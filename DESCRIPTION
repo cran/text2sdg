@@ -1,9 +1,9 @@
 Package: text2sdg
 Type: Package
-Version: 0.1.4
-Date: 2022-07-13
+Version: 0.1.5
+Date: 2022-08-29
 Title: Detecting UN Sustainable Development Goals in Text
-Description: The United Nations’ Sustainable Development Goals (SDGs) have become an important guideline for organisations to monitor and plan their contributions to social, economic, and environmental transformations. The 'text2sdg' package is an open-source analysis package that identifies SDGs in text using scientifically developed query systems, opening up the opportunity to monitor any type of text-based data, such as scientific output or corporate publications.
+Description: The United Nations’ Sustainable Development Goals (SDGs) have become an important guideline for organisations to monitor and plan their contributions to social, economic, and environmental transformations. The 'text2sdg' package is an open-source analysis package that identifies SDGs in text using scientifically developed query systems, opening up the opportunity to monitor any type of text-based data, such as scientific output or corporate publications. For more information regarding the methodology see Meier, Mata & Wulff (2021) <arXiv:2110.05856>.
 Maintainer: Dominik S. Meier <dominikmeier@outlook.com>
 Authors@R: c(
     person(c("Dirk","U."), "Wulff", role= "aut",
@@ -22,15 +22,15 @@ License: GPL-3
 Encoding: UTF-8
 Depends: R (>= 3.5.0)
 Imports: magrittr, dplyr, corpustools (>= 0.4.2), tidyr, tibble,
-        stringr, ggplot2
+        stringr, ggplot2, lifecycle
 Suggests: testthat, knitr, rmarkdown
 LazyData: TRUE
 RoxygenNote: 7.1.2
 VignetteBuilder: knitr
 NeedsCompilation: no
-Packaged: 2022-07-13 11:50:09 UTC; dominik
+Packaged: 2022-08-29 20:59:55 UTC; dominik
 Author: Dirk U. Wulff [aut] (<https://orcid.org/0000-0002-4008-8022>),
   Dominik S. Meier [aut, cre] (<https://orcid.org/0000-0002-3999-1388>),
   Rui Mata [ctb] (<https://orcid.org/0000-0002-1679-906X>)
 Repository: CRAN
-Date/Publication: 2022-07-15 15:20:02 UTC
+Date/Publication: 2022-08-30 07:00:02 UTC

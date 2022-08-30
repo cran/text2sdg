@@ -17,7 +17,7 @@ options(tibble.print_min = 5)
 
 ## -----------------------------------------------------------------------------
 # detecting SDGs using all available query systems
-hits_all <- detect_sdg(projects, 
+hits_all <- detect_sdg(projects,
                        system = c("Aurora", "Elsevier", "SIRIS", "SDSN", "OSDG"))
 
 # count hits of systems
@@ -43,7 +43,7 @@ my_queries <- tibble::tibble(system = "my_system",
 
 # return documents output format
 detect_any(text = projects, 
-           queries = my_queries)
+           system = my_queries)
 
 ## -----------------------------------------------------------------------------
 # show stacked barplot of hits
