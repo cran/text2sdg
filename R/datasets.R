@@ -3,7 +3,7 @@
 #' 500 project descriptions of University of Basel research projects that were funded by the Swiss National Science Foundation. The project descriptions were drawn randomly from University of Basel projects listed in the the public \href{https://p3.snf.ch}{P3 project data base}.
 #'
 #' @format A \code{character} vector of length 500.
-#' @source \url{https://p3.snf.ch/Pages/DataAndDocumentation.aspx}
+#' @source \url{https://data.snf.ch/about/glossary}
 "projects"
 
 #' SDG queries of the Aurora Universities Network
@@ -38,6 +38,13 @@
 #' @source \url{https://zenodo.org/record/3567769#.YVMhH9gzYUG}
 "siris_queries"
 
+#' Ensemble models based on a random forest architecture that pools the predictions of six labeling systems generated using `detect_sdg_systems()` and also considers text length.
+#'
+#' A list of trained `ranger::ranger()` random forest models that are used as the basis of `detect_sdg`.
+#'
+#' @source Wulff, Meier, & Mata (2023)
+"ensembles"
+
 #' SDG queries of Elsevier
 #'
 #' A dataset containing the SDG queries of \href{https://www.elsevier.com/connect/sdg-report}{Elsevier} (version 1). The queries are available from \href{https://data.mendeley.com/datasets/87txkw7khs/1}{data.mendeley.com}. The Elsevier queries were developed to maximize SDG hits on the Scopus database. A detailed description of how each SDG query was developed can be found \href{https://elsevier.digitalcommonsdata.com/datasets/87txkw7khs/1}{here}. There is one query per SDG. There are no queries for SDG-17.
@@ -52,7 +59,24 @@
 #' @source \url{https://data.mendeley.com/datasets/87txkw7khs/1}
 "elsevier_queries"
 
-#' SDG keyword ontology by OSDG
+#' SDG queries of the University of Auckland
+#'
+#' A dataset containing the SDG queries of \href{https://www.sdgmapping.auckland.ac.nz/}{University of Auckland} (version 1). The queries are available
+#' from \href{https://www.sdgmapping.auckland.ac.nz/}{https://www.sdgmapping.auckland.ac.nz/}. The Auckland queries were developed to build on the
+#' processes developed by the United Nations and the Times Higher Education Ranking in order to create an expanded list of keywords that can be
+#' used to identify SDG-relevant research. There is one query per SDG. There are no queries for SDG-17.
+#'
+#' @format A data frame with 16 rows and 4 columns
+#' \describe{
+#'   \item{system}{Name of system}
+#'   \item{sdg}{Label of the SDG}
+#'   \item{query_id}{Index of the query}
+#'   \item{query}{SDG query}
+#' }
+#' @source \url{https://www.sdgmapping.auckland.ac.nz/}
+"auckland_queries"
+
+#' SDG Ontology by OSDG
 #'
 #' A dataset containing the SDG queries based on the keyword ontology by OSDG. The queries are available from \href{https://figshare.com/articles/dataset/SDG_ontology/11106113/1}{figshare.com}.
 #'
@@ -68,7 +92,7 @@
 #'   \item{query}{SDG query}
 #' }
 #' @source \url{https://figshare.com/articles/dataset/SDG_ontology/11106113/1}
-"osdg_queries"
+"sdgo_queries"
 
 #' SDG keywords by SDSN
 #'

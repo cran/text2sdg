@@ -9,16 +9,26 @@ library(text2sdg)
 
 ## ---- eval=FALSE--------------------------------------------------------------
 #  # detecting SDGs in projects
-#  hits_default <- detect_sdg(projects)
+#  hits_default <- detect_sdg_systems(projects)
+#  hits_default
+
+## ---- eval=FALSE--------------------------------------------------------------
+#  # detecting SDGs in projects
+#  hits_default <- detect_sdg_systems(projects)
 #  hits_default
 
 ## ---- echo = F----------------------------------------------------------------
 options(tibble.print_min = 5)
 
 ## -----------------------------------------------------------------------------
-# detecting SDGs using all available query systems
-hits_all <- detect_sdg(projects,
-                       system = c("Aurora", "Elsevier", "SIRIS", "SDSN", "OSDG"))
+# detecting SDGs using all query systems
+# hits_all <- detect_sdg_systems(projects,
+#                        system = c("Aurora", "Elsevier", "Auckland", "SIRIS", "SDSN", "SDGO"))
+hits_all <- detect_sdg_systems(projects,
+                       system = c("Aurora", "Elsevier", "Auckland", "SIRIS", "SDSN"))
+
+# hits_all <- detect_sdg_systems(projects,
+#                        system = c("SDGO"))
 
 # count hits of systems
 table(hits_all$system)
@@ -28,12 +38,12 @@ options(tibble.print_min = 10)
 
 ## -----------------------------------------------------------------------------
 # detecting only for SDGs 1 to 5
-hits_sdg_subset <- detect_sdg(projects, sdgs = 1:5)
+hits_sdg_subset <- detect_sdg_systems(projects, sdgs = 1:5)
 hits_sdg_subset
 
 ## -----------------------------------------------------------------------------
 # return documents output format
-detect_sdg(projects, output = "documents")
+detect_sdg_systems(projects, output = "documents")
 
 ## -----------------------------------------------------------------------------
 # definition of query set

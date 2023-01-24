@@ -1,25 +1,17 @@
 # Detect Elsevier SDG
 detect_elsevier = function(corpus, sdgs, verbose = FALSE){
 
-
-
-
   #filter queries based on selected sdgs
   elsevier_queries <- elsevier_queries %>%
     dplyr::filter(sdg %in% sdgs)
-
-
-
 
   # get hits
   hits = search_corpus(corpus, elsevier_queries$query)
   hits$sdg = elsevier_queries$sdg[as.numeric(stringr::str_extract(hits$code, '[:digit:]+'))]
   hits$query_id = elsevier_queries$query_id[as.numeric(stringr::str_extract(hits$code, '[:digit:]+'))]
 
-
   # exit if no hits
   if(nrow(hits) == 0 )  return(NULL)
-
 
   # prepare out
   hits %>%
@@ -37,6 +29,5 @@ detect_elsevier = function(corpus, sdgs, verbose = FALSE){
     dplyr::mutate(hit = 1:nrow(.)) %>%
     dplyr::select(document, sdg, system, query_id, features, hit) %>%
     dplyr::arrange(document, sdg, query_id)
-
 
   }
