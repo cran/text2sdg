@@ -6,20 +6,23 @@
 \usage{
 detect_sdg(
   text,
-  system = lifecycle::deprecated(),
+  systems = lifecycle::deprecated(),
+  output = lifecycle::deprecated(),
   sdgs = 1:17,
-  synthetic = "equal",
+  synthetic = c("equal"),
   verbose = TRUE
 )
 }
 \arguments{
 \item{text}{\code{character} vector or object of class \code{tCorpus} containing text in which SDGs shall be detected.}
 
-\item{system}{As of text2sdg 1.0.0 the `system` argument of `detect_sdg()` is deprecated. This is because `detect_sdg()` now makes use of an ensemble approach that draws on all systems as well as on the text length, see --preprint-- for more information. The old version of `detect_sdg()` is available through the `detect_sdg_systems()` function.}
+\item{systems}{As of text2sdg 1.0.0 the `systems` argument of `detect_sdg()` is deprecated. This is because `detect_sdg()` now makes use of an ensemble approach that draws on all systems as well as on the text length, see --preprint-- for more information. The old version of `detect_sdg()` is available through the `detect_sdg_systems()` function.}
+
+\item{output}{As of text2sdg 1.0.0 the `output` argument of `detect_sdg()` is deprecated. This is because `detect_sdg()` now makes use of an ensemble approach that draws on all systems as well as on the text length, see --preprint-- for more information. The old version of `detect_sdg()` is available through the `detect_sdg_systems()` function.}
 
 \item{sdgs}{\code{numeric} vector with integers between 1 and 17 specifying the sdgs to identify in \code{text}. Defaults to \code{1:17}.}
 
-\item{synthetic}{\code{character} specifying the ensemble version that vary in terms of the amount of synthetic data used in training (relative to the amount of expert-labeled data). Can be one of \code{"none"}, \code{"third"}, \code{"equal"}, and \code{"tripple"}. The default is \code{"equal"}.}
+\item{synthetic}{\code{character} vector specifying the ensemble version to be used. These versions vary in terms of the amount of synthetic data used in training (relative to the amount of expert-labeled data). Can be one or more of \code{"none"}, \code{"third"}, \code{"equal"}, and \code{"triple"}. The default is \code{"equal"}.}
 
 \item{verbose}{\code{logical} specifying whether messages on the function's progress should be printed.}
 }
@@ -28,7 +31,7 @@ The function returns a \code{tibble} containing the SDG hits found in the vector
 \describe{
  \item{document}{Index of the element in \code{text} where match was found. Formatted as a factor with the number of levels matching the original number of documents.}
  \item{sdg}{Label of the SDG found in document.}
- \item{system}{The name of the system that produced the match. In this case \code{"Ensemble"}.}
+ \item{system}{The name of the ensemble system that produced the match.}
  \item{hit}{Index of hit for the Ensemble model.}
 }
 }
